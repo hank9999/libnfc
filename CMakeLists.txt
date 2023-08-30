@@ -245,7 +245,7 @@ if (NOT MSVC)
   set ( LIBNFC_USE_FILE ${CMAKE_INSTALL_PREFIX}/${LIBNFC_CMAKE_CONFIG_DIR}/UseLibNFC.cmake )
 
 
-          
+
   if(CMAKE_VERSION VERSION_LESS 2.8.8)
     configure_file ( cmake/LibNFCConfig.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/LibNFCConfig.cmake @ONLY )
     configure_file ( cmake/LibNFCConfigVersion.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/LibNFCConfigVersion.cmake @ONLY )
@@ -264,18 +264,18 @@ if (NOT MSVC)
         NO_CHECK_REQUIRED_COMPONENTS_MACRO
     )
     write_basic_package_version_file (
-      LibNFCConfigVersion.cmake 
-      VERSION ${LIBNFC_VERSION_STRING} 
+      LibNFCConfigVersion.cmake
+      VERSION ${LIBNFC_VERSION_STRING}
       COMPATIBILITY AnyNewerVersion
     )
   endif ()
-   
+
   install ( FILES ${CMAKE_CURRENT_BINARY_DIR}/LibNFCConfig.cmake
                   ${CMAKE_CURRENT_BINARY_DIR}/LibNFCConfigVersion.cmake
                   cmake/UseLibNFC.cmake
             DESTINATION ${LIBNFC_CMAKE_CONFIG_DIR}
           )
-   
+
 endif ()
 
 # Binary Package
